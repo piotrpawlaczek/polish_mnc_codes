@@ -1,10 +1,11 @@
-File Edit Options Buffers Tools Markdown YASnippet Help
 MNC CODE LIST GRABBER
 =====================
 
 Mobile Network Codes for Poland
 
-* Recieves code-list from polish electronic office website
+* Recieves code-list from office of electronic communications
+
+[website](http://www.uke.gov.pl/tablice/KodMnc-list.do?execution=e2s1)
 
 Test
 
