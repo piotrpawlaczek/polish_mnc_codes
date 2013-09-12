@@ -1,7 +1,7 @@
 import unittest
 import warnings
 import collections
-
+import operator
 
 class WarningTestMixin(object):
     'A test which checks if the specified warning was raised'
@@ -42,10 +42,9 @@ class TestMNCCodesCorrect(WarningTestMixin, unittest.TestCase):
         self.assertIsNotNone(self.codes.pop('test'))
 
 
-
 if __name__ == '__main__':
     from mnc_grabber import MNCCodes
     codes = MNCCodes()
-    for item in codes.iteritems():
-        print ' - '.join(item)
+    for idx, item in enumerate(sorted(codes.iteritems(), key=operator.itemgetter(1))):
+        print str(idx) + '.\t' + ' - '.join(item)
     unittest.main()

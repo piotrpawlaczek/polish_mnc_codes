@@ -45,14 +45,17 @@ class MNCCodes(collections.MutableMapping):
 
         for tbl in tree:
             for mnc in tbl:
-                operator, kod = None, None
+                operator, code, blocked = None, None, None
                 for child in mnc:
                     if child.tag == 'operator':
                         operator = child.text
                     if child.tag == 'kod':
-                        kod = child.text
-                if operator and kod:
-                    self._store.update({operator: kod})
+                        code = child.text
+                    if child.tag == 'blokada':
+                        if child.text == 'true':
+                            blocked = True
+                if operator and code and not blocked:
+                    self._store.update({code: operator})
 
     def __keytransform__(self, key):
         return key
