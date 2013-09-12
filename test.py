@@ -46,5 +46,5 @@ if __name__ == '__main__':
     from mnc_grabber import MNCCodes
     codes = MNCCodes()
     for idx, item in enumerate(sorted(codes.iteritems(), key=operator.itemgetter(1))):
-        print str(idx) + '.\t' + ' - '.join(item)
+        print str(idx+1) + '.\t' + ' - '.join(item)
     unittest.main()

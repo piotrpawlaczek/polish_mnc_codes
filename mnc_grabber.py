@@ -54,7 +54,7 @@ class MNCCodes(collections.MutableMapping):
                     if child.tag == 'blokada':
                         if child.text == 'true':
                             blocked = True
-                if operator and code and not blocked:
+                if operator and code:
                     self._store.update({code: operator})
 
     def __keytransform__(self, key):
